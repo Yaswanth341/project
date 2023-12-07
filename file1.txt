@@ -1,5 +1,4 @@
-This is file1.txt
-file.
-second time commit.
+This is file1.txt file.
+Remote repo side.
 
 
