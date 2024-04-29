@@ -1,4 +1,1 @@
-This is file1.txt.
-Workspace change.
-This is file1.txt file.
-Remote repo side.
+This is file1.txt modified 0n 11.07.
