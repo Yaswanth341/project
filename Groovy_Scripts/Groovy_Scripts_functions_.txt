@@ -1,0 +1,54 @@
+In Jenkins Pipeline (both Declarative and Scripted), you can use a wide range of functions, also called steps, to define and control your CI/CD workflows. Here's a categorized overview of the most commonly used functions:
+
+🧱 Core Pipeline Steps
+Function	Description
+pipeline {}	Defines a declarative pipeline.
+agent	Specifies where the pipeline or stage runs (e.g., any, label, docker).
+stages {}	Groups multiple stages.
+stage('Name') {}	Defines a single stage.
+steps {}	Contains the actual build steps.
+script {}	Runs Groovy code inside a declarative pipeline.
+
+
+⚙️ Build and Shell Steps
+Function	Description
+sh 'command'	Runs a shell command (Linux/macOS).
+bat 'command'	Runs a batch command (Windows).
+echo 'message'	Prints a message to the console.
+checkout scm	Checks out source code from version control.
+tool 'ToolName'	Uses a configured tool (e.g., JDK, Maven).
+
+
+🔁 Control Flow
+Function	Description
+when {}	Conditionally run a stage.
+input	Pauses the pipeline for manual input.
+timeout(time: 5, unit: 'MINUTES')	Sets a timeout for a stage or step.
+retry(n)	Retries a block of steps n times.
+parallel	Runs multiple branches in parallel.
+
+
+📦 Environment and Parameters
+Function	Description
+environment {}	Defines environment variables.
+params	Accesses build parameters.
+withEnv(['VAR=value'])	Temporarily sets environment variables.
+withCredentials()	Injects credentials securely.
+
+
+🧪 Testing and Tools
+Function	Description
+junit 'results.xml'	Publishes JUnit test results.
+archiveArtifacts 'build/*.jar'	Archives build artifacts.
+stash / unstash	Saves and restores files between stages.
+withSonarQubeEnv('Name')	Sets up SonarQube environment.
+step([$class: '...'])	Runs a specific plugin step (advanced).
+
+
+🧰 Utility and Misc
+Function	Description
+currentBuild	Accesses metadata about the current build.
+build	Triggers another job.
+catchError	Catches errors and continues.
+error 'message'	Fails the build with a message.
+sleep time: 10, unit: 'SECONDS'	Pauses the pipeline.
